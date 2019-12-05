@@ -22,6 +22,7 @@ class _FirstRouter extends BaseState<FirstRoute> {
   Widget build(BuildContext context) {
     // TODO: implement build
     return Scaffold(
+      resizeToAvoidBottomPadding: false,
       appBar: getBaseAppBar(),
       body: GestureDetector(
         child: getContent(),
