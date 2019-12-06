@@ -2,7 +2,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../base.dart';
-import 'index.dart';
 
 class FirstRoute extends StatefulWidget {
   @override
@@ -24,8 +23,63 @@ class _FirstRouter extends BaseState<FirstRoute> {
     return Scaffold(
       resizeToAvoidBottomPadding: false,
       appBar: getBaseAppBar(),
-      body: GestureDetector(
-        child: getContent(),
+      body: getContent(context),
+    );
+  }
+
+  ///获取页面内容
+  Widget getContent(BuildContext context) {
+    // TODO: implement build
+    return Stack(
+      children: <Widget>[getListView(), getBottomBar(), getBottomCenterBtn()],
+    );
+  }
+
+  ///获取底部bar
+  Widget getBottomBar() {
+    return Align(
+      alignment: Alignment.bottomCenter,
+      child: Container(
+        height: 60,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: <Widget>[
+            Expanded(
+              child: Container(
+                alignment: Alignment.center,
+                color: Colors.yellow,
+                child: Text("1111"),
+              ),
+            ),
+            Expanded(
+              child: GestureDetector(
+                child: Container(
+                  alignment: Alignment.center,
+                  color: Colors.green,
+                  child: Text("to seconde"),
+                ),
+                onTap: () {
+                  Navigator.pushNamed(context, "/second");
+                },
+              ),
+            )
+          ],
+        ),
+      ),
+    );
+  }
+
+  ///获取底部中间按钮
+  Widget getBottomCenterBtn() {
+    return Align(
+      alignment: Alignment.bottomCenter,
+      child: GestureDetector(
+        child: Container(
+          width: 50,
+          height: 50,
+          margin: EdgeInsets.fromLTRB(0, 0, 0, 35),
+          color: Colors.white,
+        ),
         onTap: () {
           setBaseAppBar(
               backgroundColor: appBarBackgroundColor == Colors.green
@@ -36,34 +90,42 @@ class _FirstRouter extends BaseState<FirstRoute> {
     );
   }
 
-  Widget getContent() {
-    return Index();
+  ///获取列表
+  Widget getListView() {
+    return Padding(
+      padding: EdgeInsets.fromLTRB(0, 0, 0, 60),
+      child: ListView.builder(
+          itemCount: 20,
+          itemBuilder: (BuildContext buildContext, int pos) {
+            return getListItem(buildContext, pos);
+          }),
+    );
   }
 
-  Widget getRelativeLayout() {
-    return Stack(
-      children: <Widget>[
-        ListView.builder(
-            itemCount: 100,
-            itemBuilder: (BuildContext buildContext, int pos) {
-              return Container(
-                color: pos % 2 == 0 ? Colors.red : Colors.cyan,
-                height: 100,
-                child: Text("this is $pos"),
-              );
-            }),
-        Align(
-          alignment: Alignment.bottomCenter,
-          child: Container(
-            height: 200,
-            color: Colors.black,
-            child: Text(
-              "this is positioned",
-              style: TextStyle(color: Colors.white),
+  ///获取列表item
+  Widget getListItem(BuildContext buildContext, int pos) {
+    final myController = TextEditingController();
+    return Container(
+      color: pos % 2 == 0 ? Colors.red : Colors.cyan,
+      height: 100,
+      child: Row(
+        children: <Widget>[
+          Padding(
+            padding: EdgeInsets.all(10),
+            child: Image.network(
+              'https://picsum.photos/250?image=9',
             ),
           ),
-        ),
-      ],
+          Text("this is $pos"),
+          SizedBox(
+            width: 100,
+            height: double.infinity,
+            child: TextField(
+              controller: myController,
+            ),
+          ),
+        ],
+      ),
     );
   }
 }
