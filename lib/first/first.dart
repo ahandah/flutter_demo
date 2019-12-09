@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_app2/network/dio_tools.dart';
 
 import '../base.dart';
 
@@ -45,10 +46,15 @@ class _FirstRouter extends BaseState<FirstRoute> {
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: <Widget>[
             Expanded(
-              child: Container(
-                alignment: Alignment.center,
-                color: Colors.yellow,
-                child: Text("1111"),
+              child: GestureDetector(
+                child: Container(
+                  alignment: Alignment.center,
+                  color: Colors.yellow,
+                  child: Text("getHttp"),
+                ),
+                onTap: () {
+                  new DioManager("sd").getHttp();
+                },
               ),
             ),
             Expanded(

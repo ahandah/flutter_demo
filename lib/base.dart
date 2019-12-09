@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-///基State (设置状态栏)
+///基础State (设置状态栏)
 abstract class BaseState<T extends StatefulWidget> extends State<T> {
   Brightness appBarBrightness;
   Color appBarBackgroundColor;
