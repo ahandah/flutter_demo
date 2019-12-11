@@ -1,5 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_app2/intl/intl_localizations.dart';
+import 'package:flutter_app2/intl/intl_localizations_delegate.dart';
+import 'package:flutter_app2/localizations/default_localizations.dart';
 import 'package:flutter_app2/network/dio_tools.dart';
 
 import '../base.dart';
@@ -13,10 +16,7 @@ class FirstRoute extends StatefulWidget {
 }
 
 class _FirstRouter extends BaseState<FirstRoute> {
-  _FirstRouter()
-      : super(
-            appBarBrightness: Brightness.dark,
-            appBarBackgroundColor: Colors.red);
+  _FirstRouter() : super(appBarBrightness: Brightness.dark, appBarBackgroundColor: Colors.red);
 
   @override
   Widget build(BuildContext context) {
@@ -53,7 +53,7 @@ class _FirstRouter extends BaseState<FirstRoute> {
                   child: Text("getHttp"),
                 ),
                 onTap: () {
-                  new DioManager("sd").getHttp();
+                  new DioManager().getBaidu();
                 },
               ),
             ),
@@ -87,10 +87,7 @@ class _FirstRouter extends BaseState<FirstRoute> {
           color: Colors.white,
         ),
         onTap: () {
-          setBaseAppBar(
-              backgroundColor: appBarBackgroundColor == Colors.green
-                  ? Colors.red
-                  : Colors.green);
+          setBaseAppBar(backgroundColor: appBarBackgroundColor == Colors.green ? Colors.red : Colors.green);
         },
       ),
     );
@@ -116,13 +113,13 @@ class _FirstRouter extends BaseState<FirstRoute> {
       height: 100,
       child: Row(
         children: <Widget>[
-          Padding(
-            padding: EdgeInsets.all(10),
-            child: Image.network(
-              'https://picsum.photos/250?image=9',
-            ),
-          ),
-          Text("this is $pos"),
+//          Padding(
+//            padding: EdgeInsets.all(10),
+//            child: Image.network(
+//              'https://picsum.photos/250?image=9',
+//            ),
+//          ),
+          Text("this is1 $pos - " + IntlLocalizations.of(buildContext).title),
           SizedBox(
             width: 100,
             height: double.infinity,

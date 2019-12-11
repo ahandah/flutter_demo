@@ -3,24 +3,24 @@ import 'package:dio/dio.dart';
 class DioManager {
   static DioManager _mInstance;
   Dio dio;
-  String s;
 
-  DioManager._internal(this.s);
+  DioManager._internal();
 
-  factory DioManager(String s) => _getInstance(s);
+  factory DioManager() => _getInstance();
 
   ///获取实例
-  static _getInstance(String s) {
+  static _getInstance() {
     if (_mInstance == null) {
-      _mInstance = DioManager._internal(s);
+      _mInstance = DioManager._internal();
     }
     return _mInstance;
   }
 
-  void getHttp() async {
+  ///获取百度http
+  void getBaidu() async {
     try {
-//      Response response = await Dio().get("http://www.baidu.com");
-      print(this.s);
+      Response response = await Dio().get("http://www.baidu.com");
+      print(response.data);
     } catch (e) {
       print(e);
     }
