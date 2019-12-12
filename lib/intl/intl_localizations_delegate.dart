@@ -6,7 +6,7 @@ class IntlLocalizationsDelegate extends LocalizationsDelegate<IntlLocalizations>
   bool isSupported(Locale locale) {
     // TODO: implement isSupported
 //    return ['en', 'zh'].contains(locale.languageCode);
-    return true;
+  return true;
   }
 
   @override

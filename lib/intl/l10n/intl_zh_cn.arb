@@ -1,6 +1,7 @@
 {
   "@@last_modified": "2019-12-11T16:21:47.381934",
-  "title": "title hant",
+  "@@locale":"zh_CN",
+  "title": "title cn",
   "@title": {
     "type": "text",
     "placeholders": {}

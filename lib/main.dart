@@ -23,19 +23,14 @@ class MyApp extends StatelessWidget {
       },
       localizationsDelegates: [
         IntlLocalizationsDelegate(),
-//        DefaultLocalizationsDelegate(),
         GlobalMaterialLocalizations.delegate,
         GlobalWidgetsLocalizations.delegate,
       ],
       supportedLocales: [
         const Locale('en'),
-        const Locale('zh'),
+        const Locale('zh','CN'),
         const Locale('zh', 'TW'),
-//        const Locale.fromSubtags(languageCode: 'zh', scriptCode: 'Hans'), //简体
-//        const Locale.fromSubtags(languageCode: 'zh', scriptCode: 'Hant'),//繁体
-//        const Locale.fromSubtags(languageCode: 'zh', scriptCode: 'Hans', countryCode: 'CN'), // 'zh_Hans_CN'
-//        const Locale.fromSubtags(languageCode: 'zh', scriptCode: 'Hant', countryCode: 'TW'), // 'zh_Hant_TW'
-//        const Locale.fromSubtags(languageCode: 'zh', scriptCode: 'Hant', countryCode: 'HK'), // 'zh_Hant_HK'
+        const Locale('zh', 'HK')
       ],
     );
   }

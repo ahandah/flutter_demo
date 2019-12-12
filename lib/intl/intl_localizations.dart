@@ -8,20 +8,12 @@ class IntlLocalizations {
     return Localizations.of(context, IntlLocalizations);
   }
 
-//  static Future<IntlLocalizations> load(Locale locale) {
-//    String name = locale.countryCode.isEmpty ? locale.languageCode : locale.toString();
-//    name = 'en';
-//    String localeName = Intl.canonicalizedLocale(name);
-//    return initializeMessages(localeName).then((_) {
-//      Intl.defaultLocale = localeName;
-//      return IntlLocalizations();
-//    });
-//  }
-
   static Future<IntlLocalizations> load(Locale locale) {
-    print(locale.toString());
-    return initializeMessages("zh_hans")
-        .then((Object _) {
+    String name = locale.countryCode.isEmpty ? locale.languageCode : locale.toString();
+    String localeName = Intl.canonicalizedLocale(name);
+    print(name + " - " + localeName);
+    return initializeMessages(localeName).then((b) {
+      Intl.defaultLocale = localeName;
       return new IntlLocalizations();
     });
   }
