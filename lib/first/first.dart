@@ -1,11 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_app2/intl/intl_localizations.dart';
-import 'package:flutter_app2/intl/intl_localizations_delegate.dart';
-import 'package:flutter_app2/localizations/default_localizations.dart';
 import 'package:flutter_app2/network/dio_tools.dart';
 
-import '../base.dart';
+import '../base/base.dart';
 
 class FirstRoute extends StatefulWidget {
   @override

@@ -11,7 +11,6 @@ class IntlLocalizations {
   static Future<IntlLocalizations> load(Locale locale) {
     String name = locale.countryCode.isEmpty ? locale.languageCode : locale.toString();
     String localeName = Intl.canonicalizedLocale(name);
-    print(name + " - " + localeName);
     return initializeMessages(localeName).then((b) {
       Intl.defaultLocale = localeName;
       return new IntlLocalizations();

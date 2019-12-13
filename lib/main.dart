@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app2/intl/intl_localizations_delegate.dart';
-import 'package:flutter_app2/localizations/default_localizations_delegate.dart';
+import 'package:flutter_app2/page/purchase_page.dart';
 import 'package:flutter_app2/second/second.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
@@ -18,8 +18,10 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       initialRoute: '/',
       routes: {
-        '/': (context) => FirstRoute(),
-        '/second': (context) => SecondRoute()
+        '/':
+//            (context) => PurchasePage().getShowWidget(),
+            (context) => FirstRoute(),
+        '/second': (context) => SecondRoute(),
       },
       localizationsDelegates: [
         IntlLocalizationsDelegate(),
@@ -28,7 +30,7 @@ class MyApp extends StatelessWidget {
       ],
       supportedLocales: [
         const Locale('en'),
-        const Locale('zh','CN'),
+        const Locale('zh', 'CN'),
         const Locale('zh', 'TW'),
         const Locale('zh', 'HK')
       ],

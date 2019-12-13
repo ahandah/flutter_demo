@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_app2/utils/log_utils.dart';
 
 class SecondRoute extends StatelessWidget {
   @override
@@ -12,6 +13,7 @@ class SecondRoute extends StatelessWidget {
         child: RaisedButton(
           onPressed: () {
             Navigator.pop(context);
+            LogUtils.d(getString());
           },
           child: Text('Go back!'),
         ),
@@ -19,3 +21,6 @@ class SecondRoute extends StatelessWidget {
     );
   }
 }
+
+
+String getString() => "sdfsdf";
