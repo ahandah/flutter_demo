@@ -4,6 +4,7 @@ import 'package:flutter_app2/page/purchase_page.dart';
 import 'package:flutter_app2/second/second.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
+import 'base/test_page.dart';
 import 'first/first.dart';
 
 void main(List<String> args) {
@@ -19,8 +20,8 @@ class MyApp extends StatelessWidget {
       initialRoute: '/',
       routes: {
         '/':
-//            (context) => PurchasePage().getShowWidget(),
-            (context) => FirstRoute(),
+            (context) => TestPage().getShowWidget(),
+//            (context) => FirstRoute(),
         '/second': (context) => SecondRoute(),
       },
       localizationsDelegates: [
