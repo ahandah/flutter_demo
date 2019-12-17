@@ -3,6 +3,7 @@ import 'package:flutter/rendering.dart';
 import 'package:flutter_app2/intl/intl_localizations_delegate.dart';
 import 'package:flutter_app2/page/purchase_page.dart';
 import 'package:flutter_app2/page/second/second.dart';
+import 'package:flutter_app2/page/sliver_app_bar/sliver_app_bar.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
 import 'base/test_page.dart';
@@ -22,7 +23,8 @@ class MyApp extends StatelessWidget {
       initialRoute: '/',
       routes: {
         '/':
-            (context) => PurchasePage(),
+        (context) => SliverAppBarPage(),
+//            (context) => PurchasePage(),
 //            (context) => FirstRoute(),
         '/second': (context) => SecondRoute(),
       },
