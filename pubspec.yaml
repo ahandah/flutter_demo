@@ -46,10 +46,20 @@ flutter:
   # the material Icons class.
   uses-material-design: true
 
-  # To add assets to your application, add an assets section, like this:
-  # assets:
-  #  - images/a_dot_burr.jpeg
-  #  - images/a_dot_ham.jpeg
+    # To add assets to your application, add an assets section, like this:
+    # 文件夹中没有1x的默认图片需要写出准确的图片资源名称，有1x的默认图片只需要指定到根目录
+  assets:
+    - assets/images/
+    - assets/images/proIcon/
+    - assets/images/proIcon/proIcon1/iconPro.png
+    - assets/images/proIcon/proIcon2/unlimitedRandomColors.png
+    - assets/images/proIcon/proIcon3/paintPalette.png
+    - assets/images/proIcon/proIcon4/icloudBackupPro.png
+    - assets/images/proIcon/proIcon5/colorHarmonyPro.png
+    - assets/images/proIcon/proIcon6/previewOptionsPro.png
+    - assets/images/proIcon/proIcon7/paletteSearchPro.png
+    - assets/images/proIcon/proIcon8/customCategoryPro.png
+    - assets/images/proIcon/proIcon9/businessLicensePro.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

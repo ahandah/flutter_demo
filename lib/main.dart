@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'package:flutter_app2/intl/intl_localizations_delegate.dart';
 import 'package:flutter_app2/page/purchase_page.dart';
 import 'package:flutter_app2/second/second.dart';
@@ -8,6 +9,7 @@ import 'base/test_page.dart';
 import 'first/first.dart';
 
 void main(List<String> args) {
+//  debugPaintSizeEnabled = true;
   runApp(MyApp());
 }
 
